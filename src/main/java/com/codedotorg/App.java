@@ -13,5 +13,4 @@ public class App extends Application {
         GuessingGame game = new GuessingGame(primaryStage, 300, 250);
         game.startGame();
     }
-
 }

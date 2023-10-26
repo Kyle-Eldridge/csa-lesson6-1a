@@ -1,1 +1,3 @@
 com\codedotorg\App.class
+com\codedotorg\GameLogic.class
+com\codedotorg\GuessingGame.class
