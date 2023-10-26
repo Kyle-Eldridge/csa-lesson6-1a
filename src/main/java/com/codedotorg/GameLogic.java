@@ -19,9 +19,9 @@ public class GameLogic {
      * of the game to 1 and 100 respectively. It also sets the guess to the middle of the
      * left and right boundaries and initializes the number of guesses to 1.
      */
-    public GameLogic() {
-        left = 1;
-        right = 100;
+    public GameLogic(int min, int max) {
+        left = min;
+        right = max;
         guess = (left + right) / 2;
         numGuesses = 1;
     }

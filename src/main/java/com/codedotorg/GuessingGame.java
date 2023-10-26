@@ -27,6 +27,9 @@ public class GuessingGame {
     /** The logic for making guesses in the game */
     private GameLogic logic;
 
+    private int min;
+    private int max;
+
     /**
      * Constructor for the GuessingGame class.
      * 
@@ -34,7 +37,7 @@ public class GuessingGame {
      * @param width the width of the game window
      * @param height the height of the game window
      */
-    public GuessingGame(Stage primaryStage, int width, int height) {
+    public GuessingGame(Stage primaryStage, int width, int height, int min, int max) {
         this.window = primaryStage;
         window.setTitle("Guessing Game");
 
@@ -42,7 +45,9 @@ public class GuessingGame {
         this.height = height;
 
         computerGuessLabel = new Label(""); 
-        logic = new GameLogic();       
+        logic = new GameLogic(min, max);
+        this.min = min;
+        this.max = max;
     }
     
     /**
@@ -120,7 +125,7 @@ public class GuessingGame {
      * @return A list of Node objects representing the scene labels.
      */
     public List<Node> createSceneLabels() {
-        Label promptLabel = new Label("Think of a number between 1-100.");
+        Label promptLabel = new Label("Think of a number between "+min+"-"+max+".");
         
         setComputerGuessLabel(false);
 
